@@ -1,10 +1,12 @@
 package com.edureka.my.assignments;
 
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.Select;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class Module5Assignment {
 
@@ -13,9 +15,9 @@ public class Module5Assignment {
 	{
 		//set property and instantiate the webdriver
 		
-		System.setProperty("webdriver.chrome.driver",
-		System.getProperty("user.dir")+"/chromedriver");
+		System.setProperty("webdriver.chrome.driver","chromedriver");
 		WebDriver driver = new ChromeDriver();
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -32,11 +34,13 @@ public class Module5Assignment {
 
 		//login with valid credentials
 			
-//		driver.findElement(By.xpath("//*[@id=\"si_popup_email\"]")).click();
-		
-		driver.findElement(By.xpath("//*[@id=\"si_popup_email\"]")).sendKeys("namrataktyagi@gmail.com");//user name
+		//PageLoad
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"si_popup_email\"]")).sendKeys("namrataktyagi@gmail.com");//user name
+		Thread.sleep(1000);
+		
 
 		driver.findElement(By.xpath("//*[@id=\"si_popup_passwd\"]")).sendKeys("NannuBoulder18!"); //Password
 		Thread.sleep(1000);
@@ -61,29 +65,46 @@ public class Module5Assignment {
 		
 		//driver.findElement(By.xpath("//*[@id=\"personal_details\"]/i")).click(); // edit icon top right 
 		
-		
+		System.out.println("executed upto line 66");
 		
 		
 		
 		Thread.sleep(1000);
 
+		//Navigate to my profile
+		driver.navigate().to("https://learning.edureka.co/my-profile");
 		
-		driver.findElement(By.xpath("//*[@name='currentrole']")).sendKeys("Senior A");
+
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		
 		Thread.sleep(1000);
-		
-		driver.close();
-		driver.quit();
-		
-		//Navigate to my profile
-		
+
 		
 		//update personal info
-		
-		
+		driver.findElement(By.id("personal_details")).click();
+		driver.navigate().to("https://learning.edureka.co/onboarding/personaldetails");
+		driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div/form/div[4]/input")).sendKeys("Senior QA");
 		
 		//update professional info
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div/form/div[3]/div/input")).sendKeys("7203081791");
 		
+		// drop down for experience
+		//driver.findElement(By.xpath("//*[@id=\"experience\"]")).click();
+		Select years = new Select(driver.findElement(By.xpath("//*[@id=\"experience\"]")));
+		years.selectByValue("7-10 years");
+		
+	
+		Thread.sleep(3000);
+		System.out.println("executed upto line 97");
+		
+		driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div/form/button")).click();
+		Thread.sleep(1000);
+		System.out.println("executed upto line 100");
+		
+		//driver.close();
+		//driver.quit();
+	
 		
 		//explore the blogs?
 		
