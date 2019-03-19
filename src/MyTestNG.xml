@@ -4,5 +4,5 @@
     <classes>
       <class name="module6.MyAnnotation"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- Test Test-->
 </suite> <!-- Suite -->
