@@ -2,7 +2,7 @@ package com.during.daily.lesson;
 
 import java.util.Scanner;
 
-public class BasicJavaPractice 
+public class ConsoleInput 
 
 	{
 		public static void main(String[] args) 
@@ -14,21 +14,21 @@ public class BasicJavaPractice
 					 //taking user input - adding two user inputs - integers
 					
 					
-//					System.out.println("Enter a number");
-//					int x=input.nextInt();
-//					System.out.println(x);
-//					
+				System.out.println("Enter a number");
+				int x=input.nextInt();
+				System.out.println(x);
+				
 						
 					//user input - adding two user inputs - integers
 			
 			
-//					System.out.println("Enter first number");
-//					int first=input.nextInt();
-//					System.out.println("Enter second number");
-//			
-//					int second=input.nextInt();
-//			
-//					System.out.println(first+second);
+			System.out.println("Enter first number");
+				int first=input.nextInt();
+				System.out.println("Enter second number");
+		
+				int second=input.nextInt();
+		
+				System.out.println(first+second);
 					
 //			
 			//user input - adding/concatenating two user inputs - strings

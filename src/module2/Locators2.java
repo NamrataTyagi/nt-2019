@@ -3,7 +3,9 @@ package module2;
 
 
 	
-		// Facebook Example
+		import java.util.concurrent.TimeUnit;
+
+// Facebook Example
 
 		import org.openqa.selenium.By;
 		import org.openqa.selenium.WebDriver;
@@ -18,12 +20,14 @@ package module2;
 				"chromedriver");
 				System.out.println(System.getProperty("user.dir"));
 				WebDriver driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 				
 				//Open the AUT
 				driver.get("https://www.facebook.com/");
-				
+				System.out.println("upto line 28");
 				//Locate using ID
-				driver.findElement(By.id("u_0_j")).sendKeys("Namrata");
+				driver.findElement(By.id("u_0_j")).sendKeys("");
 					
 				//Locate using Name
 				driver.findElement(By.name("lastname")).sendKeys("Tyagi");

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="false" name="Suite">
+  <test name="PracticeTest">
+    <classes>
+      <class name="DailyPractice.MyAnnotation1"/>;
+       <class name="DailyPractice.MyAnnotation2"/>;
+        <class name="DailyPractice.MyAnnotation3"/>;
+         <class name="DailyPractice.MyAnnotation4"/>;
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Alerts {
 
-	public static void main(String[] args) {
+	public static void ht(String[] args) {
 
 		// open browser
 		System.setProperty("webdriver.chrome.driver", "E:\\Abhresh\\Installation_stuff\\ExeFiles\\chromedriver.exe");

@@ -1,10 +1,13 @@
 package com.edureka.my.assignments;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.support.ui.Select;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -13,7 +16,7 @@ public class Module5Assignment {
 	public static void main(String[] args) throws InterruptedException
 	
 	{
-		//set property and instantiate the webdriver
+		//set property and instantiate the WebDriver
 		
 		System.setProperty("webdriver.chrome.driver","chromedriver");
 		WebDriver driver = new ChromeDriver();
@@ -21,7 +24,7 @@ public class Module5Assignment {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		//get the Edureka web site
+		//get the Edureka website
 		
 		driver.navigate().to("https://www.edureka.co");
 		
@@ -29,6 +32,10 @@ public class Module5Assignment {
 		//locate and click on the 'login' web element 
 		
 		driver.findElement(By.xpath("//*[@id='header-II']/section/nav/div/a[2]")).click();
+		
+		WebDriverWait wait = new WebDriverWait(driver,3);
+		
+		WebElement e = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Courses Dropdown")));
 		
 		Thread.sleep(1000);
 

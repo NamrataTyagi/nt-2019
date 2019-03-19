@@ -54,7 +54,11 @@ public class MyAnnotation {
 	  
 	  @Test
 	  public void test() {
-		  System.out.println("this is the actual test");
+		  System.out.println("this is the actual test"
+		  		+ ""
+		  		+ ""
+		  		+ ""
+		  		+ "");
 
 	  }
 
